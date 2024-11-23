@@ -98,8 +98,8 @@ if __name__ == "__main__":
     sample_text = "This is a sample text. It is long enough to split into multiple sections."
     print(f'Sample text: {sample_text}')
 
-    # Create an instance of the text_generation class
-    text_generator = text_generation()
+    # Create an instance of the TextGeneration class
+    text_generator = TextGeneration()
 
     # Set the text to be split
     text_generator.full_text = sample_text
