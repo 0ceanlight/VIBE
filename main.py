@@ -45,7 +45,7 @@ class Short:
         """
 
         # Generate text using text_generation class
-        text_generator = text_generation()
+        text_generator = TextGeneration()
         text_generator.generate_text()
 
         # Split text into sections

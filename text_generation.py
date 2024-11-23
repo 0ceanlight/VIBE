@@ -1,7 +1,7 @@
 import re
 
 
-class text_generation:
+class TextGeneration:
     """
     A class for generating text. Uses openAI to generate news text for shorts based on given RSS feeds.
     """
