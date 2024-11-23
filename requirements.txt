@@ -1,4 +1,4 @@
 pillow
-re
-os
+regex
 uuid
+openai

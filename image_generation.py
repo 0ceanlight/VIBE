@@ -1,4 +1,7 @@
+import os
+
 from PIL import Image, ImageDraw, ImageFont
+
 import textwrap
 
 # TODO: actually wrap the text
@@ -24,7 +27,7 @@ def create_text_image(text, width, height, padding=20, output_path='output.png')
     
     # Load a font that supports emojis (macOS uses Apple Color Emoji font)
     try:
-        font_path = "SFNS.ttf"  # macOS system font
+        font_path = os.path.dirname(os.path.realpath("AppleColorEmoji.ttf"))  # macOS system font
         # TODO: make this work
         # font_path = "AppleColorEmoji.ttf"
         font = ImageFont.truetype(font_path, size=24)  # Adjust font size as needed

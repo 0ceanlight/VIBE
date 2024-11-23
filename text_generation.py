@@ -1,11 +1,13 @@
 import re
 
+from openai import AzureOpenAI
 
 class TextGeneration:
     """
     A class for generating text. Uses openAI to generate news text for shorts based on given RSS feeds.
     """
     def __init__(self):
+
         self.full_text = ""
         self.splitted_text = []
         self.tags = []
