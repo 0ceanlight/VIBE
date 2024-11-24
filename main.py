@@ -10,6 +10,7 @@ which are overlaid over preexisting video clips, to create brainrot shorts to
 entertain and inform a younger audience.
 """
 
+import logging
 import os
 import uuid
 
@@ -50,25 +51,26 @@ class Short:
         text_generator.generate_text()
 
         # Split text into sections
-        text_generator.split_text(length=30)
+        text_generator.split_text(length=35)
         print(text_generator.splitted_text)
 
         # TODO: create mp3 files for each section
         # TODO: create images of the text to be overlaid for each section
         font_url = "https://github.com/shipfam/shipfam.com/blob/master/fonts/segoe-ui.ttf?raw=true"  # Example font URL
-        font_size = 50
+        font_path = "fonts/NotoSansSC-Regular.otf"
+        font_size = 30
         image_size = (800, 400)
         image_generator = ImageGeneration(font_url, font_size, image_size)
         for i in range(len(text_generator.splitted_text)):
             text = text_generator.splitted_text[i]
             output_file = self.directory + "/" + str(i) + ".png"
-            cleaned_text = re.sub(r'[^a-zA-Z\s]', '', text)
-            image_generator.create_transparent_image_with_text([cleaned_text], output_file)
+            image_generator.create_transparent_image_with_text([text], output_file)
 
         # TODO: create video clip from video
         # TODO: overlay images and mp3 files from each section onto the video
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
     short = Short("Test Short")
     short.create_short("video.mp4")

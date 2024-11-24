@@ -1,4 +1,8 @@
-pillow
-regex
+emoji==1.7.0
+openai==1.55.0
+Pillow==11.0.0
+pilmoji==2.0.4
+regex==2023.10.3
+Requests==2.32.3
+logging
 uuid
-openai
